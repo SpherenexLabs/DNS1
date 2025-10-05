@@ -82,9 +82,21 @@ const ThreatGenerator = ({ onThreatGenerated, targetUserId, attackerUid = null }
         const ip = generateRandomIP();
         setGeneratedIP(ip);
 
-        // Show alert
-        setAlertVisible(true);
-        setTimeout(() => setAlertVisible(false), 3000);
+        // Check if any selected threat is critical level
+        const hasCriticalThreat = Object.values(threatTypes).some(threat => 
+            threat.selected && threat.level === 'critical'
+        );
+
+        // Show appropriate alert based on threat level
+        if (hasCriticalThreat) {
+            // Special alert for critical threats
+            setAlertVisible(true);
+            setTimeout(() => setAlertVisible(false), 5000);
+        } else {
+            // Normal alert for non-critical threats
+            setAlertVisible(true);
+            setTimeout(() => setAlertVisible(false), 3000);
+        }
 
         // Set threat as generated
         setThreatGenerated(true);
@@ -178,9 +190,15 @@ const ThreatGenerator = ({ onThreatGenerated, targetUserId, attackerUid = null }
             </div>
 
             {alertVisible && (
-                <div className="alert-message success">
-                    <i className="fas fa-check-circle"></i>
-                    Threat Successfully Generated!
+                <div className={`alert-message ${Object.values(threatTypes).some(threat => 
+                    threat.selected && threat.level === 'critical'
+                ) ? 'critical' : 'success'}`}>
+                    <i className={`fas ${Object.values(threatTypes).some(threat => 
+                        threat.selected && threat.level === 'critical'
+                    ) ? 'fa-exclamation-triangle' : 'fa-check-circle'}`}></i>
+                    {Object.values(threatTypes).some(threat => 
+                        threat.selected && threat.level === 'critical'
+                    ) ? 'MALICIOUS THREAT GENERATED!' : 'Threat Successfully Generated!'}
                 </div>
             )}
 

@@ -46,6 +46,13 @@
     border-left: 4px solid #4ade80;
   }
   
+  .alert-message.critical {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border-left: 4px solid #ef4444;
+    animation: pulseRed 5s ease;
+  }
+  
   .alert-message i {
     margin-right: 10px;
     font-size: 1.2rem;
@@ -56,6 +63,14 @@
     10% { opacity: 1; transform: translateY(0); }
     90% { opacity: 1; }
     100% { opacity: 0; }
+  }
+  
+  @keyframes pulseRed {
+    0% { opacity: 0; transform: translateY(-10px); box-shadow: 0 0 0 rgba(239, 68, 68, 0.4); }
+    10% { opacity: 1; transform: translateY(0); box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+    90% { opacity: 1; box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+    100% { opacity: 0; box-shadow: 0 0 0 rgba(239, 68, 68, 0.4); }
   }
   
   .threat-protocols {

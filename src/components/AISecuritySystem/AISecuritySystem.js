@@ -284,7 +284,9 @@ const AISecuritySystem = ({ threatData, isActive, onThreatAnalyzed, breachedCoun
         <div className="threat-details-panel">
           <h3>
             <i className="fas fa-exclamation-triangle"></i>
-            Threat Detected
+            {(threatDetails.types || []).some(t => String(t.level).toLowerCase() === 'critical') 
+              ? 'MALICIOUS THREAT DETECTED!' 
+              : 'Threat Detected'}
           </h3>
           <div className="threat-info">
             <div className="info-row">
@@ -295,7 +297,7 @@ const AISecuritySystem = ({ threatData, isActive, onThreatAnalyzed, breachedCoun
               <span className="info-label">Threat Types:</span>
               <div className="info-value threat-types">
                 {(threatDetails.types || []).map((t, i) => (
-                  <span key={i} className={`threat-badge ${t.level || ""}`}>
+                  <span key={i} className={`threat-badge ${t.level || ""} ${String(t.level).toLowerCase() === 'critical' ? 'malicious' : ''}`}>
                     {t.type === "TCPIP" ? "TCP/IP" : t.type}
                     {t.level ? <small>({t.level})</small> : null}
                   </span>

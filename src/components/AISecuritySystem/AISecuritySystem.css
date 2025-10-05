@@ -212,7 +212,20 @@
     color: #ef4444;
   }
   
+  .threat-badge.malicious {
+    background-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    font-weight: bold;
+    animation: pulseRed 2s ease-in-out infinite;
+  }
+  
   .threat-badge small {
     opacity: 0.8;
     font-size: 0.7rem;
+  }
+  
+  @keyframes pulseRed {
+    0%, 100% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.8); }
   }
