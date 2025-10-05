@@ -1,0 +1,27 @@
+ .user-profile-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.6); display:flex; align-items:center; justify-content:center; z-index:999; }
+ .user-profile-modal { width:880px; max-height:90vh; overflow:auto; background:#0f1a22; border:1px solid #1e3842; border-radius:14px; padding:26px 30px 32px; color:#d8f8ee; box-shadow:0 20px 40px -12px rgba(0,0,0,.55); }
+ .user-profile-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; }
+ .user-profile-header h2 { margin:0 0 4px; font-size:26px; font-weight:600; background:linear-gradient(90deg,#7af8c9,#45b0ff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+ .close-btn { background:#183038; border:1px solid #24474f; color:#9fded0; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; }
+ .close-btn:hover { background:#21414a; }
+ .section { margin-bottom:28px; }
+ .section h3 { margin:0 0 10px; font-size:15px; letter-spacing:.5px; font-weight:600; text-transform:uppercase; color:#6dd7bf; }
+ .kv-grid { display:grid; grid-template-columns:180px 1fr; row-gap:6px; column-gap:14px; font-size:14px; }
+ .kv-grid .k { color:#7ab3c2; text-align:right; font-weight:500; }
+ .domain-card { background:#14242c; border:1px solid #1d3943; border-radius:10px; padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; position:relative; }
+ .domains-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); }
+ .domain-title { font-weight:600; font-size:14px; color:#82f2c9; }
+ .badge { display:inline-block; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:600; letter-spacing:.5px; background:#1e3d47; color:#7fe9cd; margin-right:4px; }
+ .threats-table { width:100%; border-collapse:collapse; font-size:13px; }
+ .threats-table th, .threats-table td { padding:8px 10px; text-align:left; }
+ .threats-table th { background:#153039; position:sticky; top:0; z-index:1; }
+ .threats-wrapper { max-height:260px; overflow:auto; border:1px solid #1d3943; border-radius:8px; }
+ .threats-table tbody tr:nth-child(2n) { background:#13252d; }
+ .status-pill { padding:3px 10px; border-radius:20px; font-size:11px; text-transform:uppercase; background:#223d47; color:#8df1d5; font-weight:600; }
+ .empty { padding:14px 10px; color:#6e94a2; font-size:13px; }
+ .inline-level { font-size:11px; padding:2px 6px; background:#204650; color:#9aeed6; border-radius:8px; margin-left:4px; }
+ .split-row { display:flex; gap:28px; flex-wrap:wrap; }
+ .mini-stats { display:flex; gap:18px; flex-wrap:wrap; }
+ .mini-stat { background:#14242c; border:1px solid #1d3943; padding:10px 14px 12px; border-radius:10px; min-width:150px; }
+ .mini-stat h4 { margin:0 0 4px; font-size:11px; letter-spacing:1px; color:#6dd7bf; font-weight:600; }
+ .mini-stat .val { font-size:18px; font-weight:600; color:#7ff3ce; }
